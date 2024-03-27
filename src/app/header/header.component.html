@@ -1,0 +1,58 @@
+<header [attr.theme]="theme">
+  <div class="container">
+    <div class="mobile-menu-icon" (click)="toggleMobileMenu()">
+      <mat-icon>menu</mat-icon>
+    </div>
+    <div class="desktop-menu wrap gap-5 ai-c">
+      <nav>        
+        <ul class="menu d-flex ">
+          <li *ngFor="let item of arr_links">
+            <a [routerLink]="item.link" routerLinkActive="active-link"
+              [routerLinkActiveOptions]="{ exact: true }">{{item.title}}</a>
+          </li>
+          <li class=" d-flex ai-c"  *ngIf="isAuth">
+            <a class="new-post-link d-flex ai-c" routerLink="/create-post" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
+              <mat-icon class="new-post-icon" aria-hidden="false" aria-label="Create new post"
+                fontIcon="edit_square"></mat-icon>
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+
+      <div class="d-flex themes">
+        <button class="btn-logout" *ngIf="(token | async) !== ''" (click)="logout()">Logout</button>
+        <a [routerLink]="'auth'" [routerLink]="'auth'" routerLinkActive="active-link"
+          [routerLinkActiveOptions]="{ exact: true }" *ngIf="(token | async)===''">Login</a>
+        <p *ngFor="let item of header_langs" [ngClass]="{'active': lang === item}" (click)="changeLang(item)">
+          {{item}}</p>
+      </div>
+
+      <div class="d-flex gap-1 themes">
+        <p *ngFor="let item of header_themes" [ngClass]="{'active': theme === item}" (click)="changeTheme(item)">
+          {{item}}</p>
+      </div>
+
+    
+    </div>
+
+    <nav class="mobile-menu" (click)="toggleMobileMenu()" *ngIf="showMobileMenu" >
+      <ul>
+        <li *ngFor="let item of arr_links">
+          <a [routerLink]="item.link" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">{{item.title}}</a>
+        </li>
+        <li *ngIf="(token | async) !== ''">
+          <a class="new-post-link" routerLink="/create-post" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
+            <mat-icon fontIcon="edit_square"></mat-icon>
+            Create new post
+          </a>
+        </li>
+        <li *ngIf="(token | async)===''">
+          <a [routerLink]="'auth'" [routerLink]="'auth'" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Login</a>
+        </li>
+        <li *ngFor="let item of header_langs" [ngClass]="{'active': lang === item}" (click)="changeLang(item)"><p>{{item}}</p></li>
+        <li *ngFor="let item of header_themes" [ngClass]="{'active': theme === item}" (click)="changeTheme(item)"><p>{{item}}</p></li>
+      </ul>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,168 @@
+/*Google Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Open+Sans:wght@300;400;700&display=swap');
+
+
+:root {
+  --link-menu: #001640;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+
+header,
+footer {
+  display: flex;
+  justify-content: center;
+  height: 55px;
+  background-color: #6200ee;
+  color: #fff;
+  padding: 10px 40px;
+}
+
+header[theme='dark'] {
+  background-color: #393939;
+}
+
+.wrap[theme='dark'] footer {
+  background-color: #393939;
+}
+
+section {
+  padding: 60px 40px;
+}
+
+.container {
+  width: 100%;
+  max-width:1400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.d-flex {
+  display: flex;
+  align-items: center;
+}
+
+.jcsb {
+  justify-content: space-between;
+}
+
+.ai-c {
+  align-items: center;
+}
+
+.gap-1 {
+  gap: 16px;
+}
+
+.gap-2 {
+  gap: 24px;
+}
+
+.gap-3 {
+  gap: 32px;
+}
+
+.gap-4 {
+  gap: 48px;
+}
+
+.gap-5 {
+  gap: 64px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  min-height: calc(100vh - 110px);
+  /* background-color: #f0f1f5ce; */
+}
+
+app-layout {
+  display: grid;
+  grid-template-rows: auto 0 1fr auto;
+}
+
+html,
+body {
+  /* height: 100%; */
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans", "sans-serif"
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Montserrat", "sans-serif";
+}
+
+
+.wrap[theme="dark"] .item {
+  background-color: #393939;
+  color: #fff;
+  border: none;
+  box-shadow: 0px 2px 4px #12121260;
+}
+
+.wrap[theme="dark"] .btn {
+  background: #bb86fc;
+  border: none;
+  color: #000;
+}
+
+.wrap[theme="dark"] .auth-wrap button {
+  background: #bb86fc;
+  border: none;
+  color: #000;
+}
+
+.wrap[theme="dark"] .mat-mdc-tab .mdc-tab-indicator__content--underline {
+  border-color: #bb86fc;
+}
+
+.wrap[theme="dark"] .btn:hover {
+  background: #a663f8;
+}
+
+.mat-mdc-tab-header {
+  margin-bottom: 22px;
+}
+
+
+/* Для розмірів екрану до 768px */
+@media only screen and (max-width: 768px) {
+  .container {    
+    padding: 0 20px; /* Змінюємо відступи контейнера */
+  }
+}
+
+/* Для розмірів екрану від 769px до 1024px */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .container {
+   
+  }
+}
+
+/* Для розмірів екрану більше 1024px */
+@media only screen and (min-width: 1025px) {
+  .container {
+    width: 100%; /* Змінюємо ширину контейнера */
+  }
+}

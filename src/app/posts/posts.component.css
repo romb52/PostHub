@@ -1,0 +1,89 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.item {
+  /* min-width: 300px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 5px 10px;
+  background-color: #fff;
+  border: 1px solid #8a9ca369;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(138, 156, 163, 0.5);
+}
+
+
+.item p{
+margin: 5px 0;
+}
+
+h1 {
+  margin-bottom: 15px;
+}
+
+h3 {
+  margin-top: 15px;
+}
+
+.tags {
+  color: #6c797f;
+  opacity: 0.9; 
+  transition: opacity 0.3s ease;
+}
+ 
+
+.tags:hover {
+  cursor: pointer;
+  color: #444d51;
+  opacity: 1;
+}
+
+.likes {
+  color: #6c797f;
+  opacity: 0.9;
+  margin-right: 5px;
+}
+
+.btn {
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: none;
+  background: linear-gradient(to right, #4916a3, #6200ee, #9147ff);
+  color: #fff;
+  width: 100px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #9147ff;
+}
+
+.icon{
+  cursor: pointer;
+}
+
+.delete-icon{
+  align-self:flex-end;
+}
+.delete-icon:hover{
+  color: red;
+}
+
+@media only screen and (max-width: 768px) {
+  
+  
+}
+
+@media only screen and (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr; /* Одна колонка на всю ширину на екранах до 480px */
+  }
+  .item {
+    padding: 5px; /* Зменшуємо внутрішні відступи на малих екранах */
+  }
+}

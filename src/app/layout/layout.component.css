@@ -1,0 +1,13 @@
+.wrap {
+  background-color: #f0f1f5ce;
+}
+.wrap[theme="dark"] {
+  background-color: #121212;
+  color: #fff;
+}
+.wrap[theme="dark"] * {
+  color: #fff;
+}
+
+
+
