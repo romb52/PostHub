@@ -11,7 +11,7 @@
               [routerLinkActiveOptions]="{ exact: true }">{{item.title}}</a>
           </li>
           <li class=" d-flex ai-c"  *ngIf="isAuth">
-            <a class="new-post-link d-flex ai-c" routerLink="/create-post" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
+            <a class="new-post-link d-flex ai-c" routerLink="PostHub/create-post" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
               <mat-icon class="new-post-icon" aria-hidden="false" aria-label="Create new post"
                 fontIcon="edit_square"></mat-icon>
             </a>
@@ -22,7 +22,7 @@
 
       <div class="d-flex themes">
         <button class="btn-logout" *ngIf="(token | async) !== ''" (click)="logout()">Logout</button>
-        <a [routerLink]="'auth'" [routerLink]="'auth'" routerLinkActive="active-link"
+        <a [routerLink]="'PostHub/auth'" [routerLink]="'PostHub/auth'" routerLinkActive="active-link"
           [routerLinkActiveOptions]="{ exact: true }" *ngIf="(token | async)===''">Login</a>
         <p *ngFor="let item of header_langs" [ngClass]="{'active': lang === item}" (click)="changeLang(item)">
           {{item}}</p>
@@ -42,13 +42,13 @@
           <a [routerLink]="item.link" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">{{item.title}}</a>
         </li>
         <li *ngIf="(token | async) !== ''">
-          <a class="new-post-link" routerLink="/create-post" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
+          <a class="new-post-link" routerLink="PostHub/create-post" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
             <mat-icon fontIcon="edit_square"></mat-icon>
             Create new post
           </a>
         </li>
         <li *ngIf="(token | async)===''">
-          <a [routerLink]="'auth'" [routerLink]="'auth'" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Login</a>
+          <a [routerLink]="'PostHub/auth'" [routerLink]="'PostHub/auth'" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Login</a>
         </li>
         <li *ngFor="let item of header_langs" [ngClass]="{'active': lang === item}" (click)="changeLang(item)"><p>{{item}}</p></li>
         <li *ngFor="let item of header_themes" [ngClass]="{'active': theme === item}" (click)="changeTheme(item)"><p>{{item}}</p></li>

@@ -42,7 +42,7 @@ export class HeaderComponent {
       (newLang) => {
         this.lang = newLang;
         this.arr_links = headerLinks[newLang].map((item, i) => {
-          return { link: newLang + '/' + links[i], title: item }
+          return { link: newLang + '/PostHub/' + links[i], title: item }
         })
       }
     );

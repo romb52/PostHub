@@ -37,7 +37,7 @@ export class AuthEffects {
           map((response: IFullUser | IError) => {
             if ('user' in response) {
               const { token, username, id } = response.user;
-              this.router.navigate(['/']);
+              this.router.navigate(['PostHub/']);
               return AuthAction.setTokenAction({ token, username, id });
             } else {
               return AuthAction.logoutAction();
@@ -63,7 +63,7 @@ export class AuthEffects {
           map((response: IFullUser | IError) => {
             if ('user' in response) {
               const { token, username, id } = response.user;
-              this.router.navigate(['/']);
+              this.router.navigate(['PostHub/']);
               return AuthAction.setTokenAction({ token, username, id });
             } else {
               return AuthAction.logoutAction();
@@ -87,7 +87,7 @@ currentUserEffect$ = createEffect(() =>
         map((response: IFullUser | IError) => {
           if ('user' in response) {
             const { token, username, id } = response.user;
-            this.router.navigate(['/']);
+            this.router.navigate(['PostHub/']);
             return AuthAction.setTokenAction({ token, username, id });
           } else {
             return AuthAction.logoutAction();

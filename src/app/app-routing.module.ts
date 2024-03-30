@@ -8,24 +8,24 @@ import { AuthComponent } from './auth/auth.component';
 import { CreatePostComponent } from './create-post/create-post.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'posts', component: PostsComponent },
-  { path: 'post/:id', component: PostComponent },
-  { path: '404', component: ErrorPageComponent },
-  { path: 'auth', component: AuthComponent },
-  { path: 'create-post', component: CreatePostComponent },
+  { path: 'PostHub', component: HomeComponent },
+  { path: 'PostHub/posts', component: PostsComponent },
+  { path: 'PostHub/post/:id', component: PostComponent },
+  { path: 'PostHub/404', component: ErrorPageComponent },
+  { path: 'PostHub/auth', component: AuthComponent },
+  { path: 'PostHub/create-post', component: CreatePostComponent },
   {
     path: ':lang',
     children: [
-      { path: '', component: HomeComponent },
-      { path: 'posts', component: PostsComponent },
-      { path: 'post/:id', component: PostComponent },
-      { path: '404', component: ErrorPageComponent },
-      { path: 'auth', component: AuthComponent },
-      { path: 'create-post', component: CreatePostComponent },
+      { path: 'PostHub', component: HomeComponent },
+      { path: 'PostHub/posts', component: PostsComponent },
+      { path: 'PostHub/post/:id', component: PostComponent },
+      { path: 'PostHub/404', component: ErrorPageComponent },
+      { path: 'PostHub/auth', component: AuthComponent },
+      { path: 'PostHub/create-post', component: CreatePostComponent },
     ],
   },
-  { path: '**', redirectTo: '404' },
+  // { path: 'PostHub/**', redirectTo: '404' },
 ];
 
 @NgModule({
