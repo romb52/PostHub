@@ -90,6 +90,7 @@ main {
   justify-content: center;
   min-height: calc(100vh - 110px);
   /* background-color: #f0f1f5ce; */
+  /* background-color: #f0f1f5ce; */
 }
 
 app-layout {
