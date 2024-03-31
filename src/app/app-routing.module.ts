@@ -8,6 +8,7 @@ import { AuthComponent } from './auth/auth.component';
 import { CreatePostComponent } from './create-post/create-post.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'PostHub', pathMatch: 'full' },
   { path: 'PostHub', component: HomeComponent },
   { path: 'PostHub/posts', component: PostsComponent },
   { path: 'PostHub/post/:id', component: PostComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
   {
     path: ':lang',
     children: [
+      { path: '', redirectTo: 'PostHub', pathMatch: 'full' },
       { path: 'PostHub', component: HomeComponent },
       { path: 'PostHub/posts', component: PostsComponent },
       { path: 'PostHub/post/:id', component: PostComponent },
@@ -25,7 +27,7 @@ const routes: Routes = [
       { path: 'PostHub/create-post', component: CreatePostComponent },
     ],
   },
-  // { path: 'PostHub/**', redirectTo: '404' },
+    { path: '**', redirectTo: 'PostHub/404' },
 ];
 
 @NgModule({
