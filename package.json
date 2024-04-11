@@ -1,12 +1,9 @@
-{
-  "homepage": "https://romb52.github.io/PostHub",
+{  
   "name": "angular-rounting",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve -o",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "start": "ng serve -o",   
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
