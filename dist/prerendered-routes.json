@@ -1,9 +1,0 @@
-{
-  "routes": [
-    "/PostHub",
-    "/PostHub/404",
-    "/PostHub/auth",
-    "/PostHub/create-post",
-    "/PostHub/posts"
-  ]
-}
